@@ -1,39 +1,3 @@
-<<<<<<< HEAD
-
-## FaydaLink
-
-### Setup (Local)
-
-1. Clone the repo
-   ```sh
-   git clone <repo-url>
-   cd faydalink
-   ```
-2. Create `.env` from `.env.example`
-   ```sh
-   cp faydalink_backend/.env.example faydalink_backend/.env
-   # Or manually copy and fill in your secrets
-   ```
-3. Activate venv and install packages:
-   ```sh
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   pip install -r requirements.txt
-   ```
-4. Run server:
-   ```sh
-   python manage.py runserver
-   ```
-
-### Docker Setup
-
-1. Add real `.env` in `faydalink_backend/`
-2. Run:
-   ```sh
-   docker-compose up --build
-   ```
-3. Visit: `http://localhost:8000/api/verify-fin/?fin=3126894653473958`
-=======
 # Fayda CreditLink: Smart Loans for Health and Agriculture
 
 ## 👥 Contributors:
@@ -74,6 +38,73 @@ A web app that:
 
 ---
 
-## 🚀 Getting Started:
-TBD — Setup instructions coming soon.
->>>>>>> 43d7b64c67c6c6a4e30c84e573f07da8b0934836
+## 🚀 Getting Started
+
+### Backend Setup
+1. Clone the repo
+   ```sh
+   git clone <repo-url>
+   cd faydalink
+   ```
+2. Create `.env` from `.env.example`
+   ```sh
+   cp faydalink_backend/.env.example faydalink_backend/.env
+   # Or manually copy and fill in your secrets
+   ```
+3. Activate venv and install packages:
+   ```sh
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   pip install -r faydalink_backend/requirements.txt
+   ```
+4. Run server:
+   ```sh
+   cd faydalink_backend
+   python manage.py runserver
+   ```
+
+### Frontend Setup
+1. Go to frontend directory
+   ```sh
+   cd faydalink_frontend
+   ```
+2. Install dependencies
+   ```sh
+   npm install
+   ```
+3. Start React app
+   ```sh
+   npm start
+   ```
+
+### Docker Setup
+1. Add real `.env` in `faydalink_backend/`
+2. Run:
+   ```sh
+   docker-compose up --build
+   ```
+3. Visit: `http://localhost:8000/api/verify-fin/?fin=3126894653473958`
+
+---
+
+## 📁 Project Structure
+
+- faydalink_backend/ — Django backend (APIs, models, admin, .env, Docker)
+- faydalink_frontend/ — React frontend (pages, components, routing, API)
+- docker-compose.yml — Multi-service orchestration
+- README.md — Docs and setup
+
+---
+
+## ⚠️ Git & Version Control
+- `.gitignore` is set for both backend and frontend to avoid pushing secrets, build files, and dependencies.
+- Always check `.env` and other sensitive files are not committed.
+
+---
+
+## 🧑‍💻 Contributing
+- Fork, branch, and PR as usual.
+- Backend: Django, DRF, PostgreSQL
+- Frontend: React, Axios, Tailwind
+
+---
