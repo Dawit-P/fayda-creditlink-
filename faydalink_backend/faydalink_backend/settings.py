@@ -42,8 +42,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+]
+
+INSTALLED_APPS += [
+    'fayda_auth',
     'rest_framework',
-    'core',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +135,19 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTHENTICATION_BACKENDS = [
+    'fayda_auth.backends.FaydaOIDCAuthBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+# Fayda OIDC Configuration
+OIDC_OP_ISSUER = os.getenv('FAYDA_ISSUER_URL')
+OIDC_RP_CLIENT_ID = os.getenv('FAYDA_CLIENT_ID')
+OIDC_RP_CLIENT_SECRET = os.getenv('FAYDA_CLIENT_SECRET')
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
