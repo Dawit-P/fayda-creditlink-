@@ -98,9 +98,7 @@ A web app that:
 
 ## ⚠️ Git & Version Control
 - `.gitignore` is set for both backend and frontend to avoid pushing secrets, build files, and dependencies.
-- Always check `.env` and other sensitive files are not committed.
 
----
 
 ## 🧑‍💻 Contributing
 - Fork, branch, and PR as usual.
