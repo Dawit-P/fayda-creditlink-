@@ -43,7 +43,7 @@ A web app that:
 ### Backend Setup
 1. Clone the repo
    ```sh
-   git clone <repo-url>
+   git clone https://github.com/Dawit-P/fayda-creditlink-
    cd faydalink
    ```
 2. Create `.env` from `.env.example`
